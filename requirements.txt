@@ -1,0 +1,8 @@
+asgiref==3.5.2
+Django==4.0.6
+sqlparse==0.4.2
+djangorestframework==3.14.0
+django-filter
+black
+python-dotenv
+psycopg2==2.9.7
