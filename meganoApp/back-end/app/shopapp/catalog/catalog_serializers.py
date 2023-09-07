@@ -1,8 +1,16 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
-from shopapp.models import CategoriesImage, Subcategories, ProductsImage, Categories, Tag, ProductReview, Product, \
-    SaleProduct
+from shopapp.models import (
+    CategoriesImage,
+    Subcategories,
+    ProductsImage,
+    Categories,
+    Tag,
+    ProductReview,
+    Product,
+    SaleProduct,
+)
 
 
 class CategoriesImageSerializer(ModelSerializer):

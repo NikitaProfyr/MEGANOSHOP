@@ -5,22 +5,41 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0002_productsimage'),
+        ("shopapp", "0002_productsimage"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Subcategories',
+            name="Subcategories",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50, verbose_name='наименование категории')),
-                ('image', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='shopapp.categoriesimage')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        max_length=50, verbose_name="наименование категории"
+                    ),
+                ),
+                (
+                    "image",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="shopapp.categoriesimage",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Подкатегории',
-                'verbose_name_plural': 'Подкатегории',
+                "verbose_name": "Подкатегории",
+                "verbose_name_plural": "Подкатегории",
             },
         ),
     ]

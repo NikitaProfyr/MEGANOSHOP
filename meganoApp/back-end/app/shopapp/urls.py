@@ -2,10 +2,19 @@ from django.urls import path
 
 from shopapp.orders.orders_api import OrdersApi, OrderApi, paymentApi
 from shopapp.cart.cart_api import BasketApi
-from shopapp.catalog.catalog_api import ProductApi, PopularProductApi, TagsApi, CategoriesApi, LimitedProductApi, BannerProductApi, \
-    ProductReviewApi, ProductsApi, SaleProductsApi
+from shopapp.catalog.catalog_api import (
+    ProductApi,
+    PopularProductApi,
+    TagsApi,
+    CategoriesApi,
+    LimitedProductApi,
+    BannerProductApi,
+    ProductReviewApi,
+    ProductsApi,
+    SaleProductsApi,
+)
 
-app_name = 'shop_app'
+app_name = "shop_app"
 
 
 urlpatterns = [

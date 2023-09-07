@@ -5,24 +5,46 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0009_popularproducts_limitedproducts_bannersproducts'),
+        ("shopapp", "0009_popularproducts_limitedproducts_bannersproducts"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='SaleProduct',
+            name="SaleProduct",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('salePrice', models.DecimalField(decimal_places=2, default=0, max_digits=6, verbose_name='скидочная цена продукта')),
-                ('dateFrom', models.DateField(auto_now_add=True, null=True)),
-                ('dateTo', models.DateField(null=True)),
-                ('item', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='shopapp.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "salePrice",
+                    models.DecimalField(
+                        decimal_places=2,
+                        default=0,
+                        max_digits=6,
+                        verbose_name="скидочная цена продукта",
+                    ),
+                ),
+                ("dateFrom", models.DateField(auto_now_add=True, null=True)),
+                ("dateTo", models.DateField(null=True)),
+                (
+                    "item",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="shopapp.product",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Товар со скидкой',
-                'verbose_name_plural': 'Товары со скидкой',
+                "verbose_name": "Товар со скидкой",
+                "verbose_name_plural": "Товары со скидкой",
             },
         ),
     ]

@@ -4,43 +4,66 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0008_order'),
+        ("shopapp", "0008_order"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='PopularProducts',
+            name="PopularProducts",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.ManyToManyField(to='shopapp.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("items", models.ManyToManyField(to="shopapp.product")),
             ],
             options={
-                'verbose_name': 'Популярные продукты',
-                'verbose_name_plural': 'Популярные продукты',
+                "verbose_name": "Популярные продукты",
+                "verbose_name_plural": "Популярные продукты",
             },
         ),
         migrations.CreateModel(
-            name='LimitedProducts',
+            name="LimitedProducts",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.ManyToManyField(to='shopapp.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("items", models.ManyToManyField(to="shopapp.product")),
             ],
             options={
-                'verbose_name': 'Лимитированный продукт',
-                'verbose_name_plural': 'Лимитированные продукты',
+                "verbose_name": "Лимитированный продукт",
+                "verbose_name_plural": "Лимитированные продукты",
             },
         ),
         migrations.CreateModel(
-            name='BannersProducts',
+            name="BannersProducts",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('items', models.ManyToManyField(to='shopapp.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("items", models.ManyToManyField(to="shopapp.product")),
             ],
             options={
-                'verbose_name': 'Баннер',
-                'verbose_name_plural': 'Баннер',
+                "verbose_name": "Баннер",
+                "verbose_name_plural": "Баннер",
             },
         ),
     ]

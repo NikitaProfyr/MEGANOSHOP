@@ -7,8 +7,21 @@ from rest_framework.views import APIView
 
 from shopapp.catalog.catalog_filters import CatalogFilters
 from shopapp.catalog.catalog_pagination import CatalogPagination
-from shopapp.catalog.catalog_serializers import CategoriesSerializer, TagSerializer, ProductSerializer, SaleProductSerializer
-from shopapp.models import Categories, PopularProducts, LimitedProducts, BannersProducts, Product, Tag, SaleProduct
+from shopapp.catalog.catalog_serializers import (
+    CategoriesSerializer,
+    TagSerializer,
+    ProductSerializer,
+    SaleProductSerializer,
+)
+from shopapp.models import (
+    Categories,
+    PopularProducts,
+    LimitedProducts,
+    BannersProducts,
+    Product,
+    Tag,
+    SaleProduct,
+)
 
 
 class CategoriesApi(APIView):
@@ -87,15 +100,17 @@ class ProductApi(APIView):
 
 class ProductsApi(ListAPIView):
     """Отображение продуктов"""
+
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     pagination_class = CatalogPagination
     filter_class = CatalogFilters
-    filterset_fields = ['title', 'freeDelivery']
+    filterset_fields = ["title", "freeDelivery"]
 
 
 class SaleProductsApi(ListAPIView):
     """Продукты со скидкой"""
+
     queryset = SaleProduct.objects.all()
     serializer_class = SaleProductSerializer
     pagination_class = CatalogPagination

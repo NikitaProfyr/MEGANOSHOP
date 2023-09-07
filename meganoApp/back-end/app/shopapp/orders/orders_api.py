@@ -10,18 +10,12 @@ from shopapp.models import Order
 
 
 class OrdersApi(APIView):
+    """Отображение заказов"""
     def get(self, request: HttpRequest):
-        # cart = Cart(self.request)
-        # products = cart.get_cart_data()
-        # serializer = ProductReviewCountSerializer(products, many=True)
         user = self.request.user
         profile = Profile.objects.get(user=user)
         order = Order.objects.filter(user=profile).all()
-        print("======================")
-        # print(user)
-        print(order)
         serializer = OrderSerializer(order, many=True)
-        # print(serializer.data)
         return Response(serializer.data)
 
     def post(self, request: HttpRequest):
@@ -32,13 +26,13 @@ class OrdersApi(APIView):
         order = Order.objects.create(user=profile)
         for product in products:
             order.products.add(product)
-        # serializer = ProductReviewCountSerializer(products, many=True)
         order.save()
         response = {"orderId": order.id}
         return Response(response)
 
 
 class OrderApi(APIView):
+    """Отображение информации о конкретном заказе"""
     def get(self, request, id):
         order = Order.objects.get(pk=id)
         serializer = OrderSerializer(order)

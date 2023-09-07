@@ -4,21 +4,31 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0004_categories'),
+        ("shopapp", "0004_categories"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, verbose_name='наименование тега')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=50, verbose_name="наименование тега"),
+                ),
             ],
             options={
-                'verbose_name': 'Категории',
-                'verbose_name_plural': 'Категории',
+                "verbose_name": "Категории",
+                "verbose_name_plural": "Категории",
             },
         ),
     ]

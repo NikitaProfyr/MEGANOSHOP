@@ -5,33 +5,98 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('userapp', '0001_initial'),
-        ('shopapp', '0007_alter_productreview_options_alter_productreview_date_and_more'),
+        ("userapp", "0001_initial"),
+        (
+            "shopapp",
+            "0007_alter_productreview_options_alter_productreview_date_and_more",
+        ),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('createdAt', models.DateField(blank=True, null=True, verbose_name='дата создания')),
-                ('fullName', models.CharField(max_length=100, null=True, verbose_name='ФИО')),
-                ('email', models.CharField(max_length=100, null=True, verbose_name='Эл. почта')),
-                ('phone', models.CharField(max_length=12, null=True, verbose_name='Номер телефона')),
-                ('deliveryType', models.CharField(max_length=20, null=True, verbose_name='Тип доставки')),
-                ('paymentType', models.CharField(max_length=20, null=True, verbose_name='Тип платежа')),
-                ('totalCost', models.DecimalField(decimal_places=2, max_digits=10, null=True)),
-                ('status', models.CharField(max_length=20, null=True, verbose_name='статус заказа')),
-                ('city', models.CharField(max_length=100, null=True, verbose_name='Город доставки заказа')),
-                ('address', models.TextField(blank=True, max_length=150, null=True, verbose_name='адрес заказа')),
-                ('products', models.ManyToManyField(to='shopapp.product')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='userapp.profile')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "createdAt",
+                    models.DateField(
+                        blank=True, null=True, verbose_name="дата создания"
+                    ),
+                ),
+                (
+                    "fullName",
+                    models.CharField(max_length=100, null=True, verbose_name="ФИО"),
+                ),
+                (
+                    "email",
+                    models.CharField(
+                        max_length=100, null=True, verbose_name="Эл. почта"
+                    ),
+                ),
+                (
+                    "phone",
+                    models.CharField(
+                        max_length=12, null=True, verbose_name="Номер телефона"
+                    ),
+                ),
+                (
+                    "deliveryType",
+                    models.CharField(
+                        max_length=20, null=True, verbose_name="Тип доставки"
+                    ),
+                ),
+                (
+                    "paymentType",
+                    models.CharField(
+                        max_length=20, null=True, verbose_name="Тип платежа"
+                    ),
+                ),
+                (
+                    "totalCost",
+                    models.DecimalField(decimal_places=2, max_digits=10, null=True),
+                ),
+                (
+                    "status",
+                    models.CharField(
+                        max_length=20, null=True, verbose_name="статус заказа"
+                    ),
+                ),
+                (
+                    "city",
+                    models.CharField(
+                        max_length=100, null=True, verbose_name="Город доставки заказа"
+                    ),
+                ),
+                (
+                    "address",
+                    models.TextField(
+                        blank=True,
+                        max_length=150,
+                        null=True,
+                        verbose_name="адрес заказа",
+                    ),
+                ),
+                ("products", models.ManyToManyField(to="shopapp.product")),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="userapp.profile",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Заказ',
-                'verbose_name_plural': 'Заказы',
+                "verbose_name": "Заказ",
+                "verbose_name_plural": "Заказы",
             },
         ),
     ]

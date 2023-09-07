@@ -4,29 +4,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0011_alter_tag_options_alter_product_reviews'),
+        ("shopapp", "0011_alter_tag_options_alter_product_reviews"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='saleproduct',
-            name='item',
+            model_name="saleproduct",
+            name="item",
         ),
         migrations.AddField(
-            model_name='saleproduct',
-            name='images',
-            field=models.ManyToManyField(null=True, to='shopapp.productsimage'),
+            model_name="saleproduct",
+            name="images",
+            field=models.ManyToManyField(null=True, to="shopapp.productsimage"),
         ),
         migrations.AddField(
-            model_name='saleproduct',
-            name='price',
-            field=models.DecimalField(decimal_places=2, default=0, max_digits=6, verbose_name='цена продукта'),
+            model_name="saleproduct",
+            name="price",
+            field=models.DecimalField(
+                decimal_places=2, default=0, max_digits=6, verbose_name="цена продукта"
+            ),
         ),
         migrations.AddField(
-            model_name='saleproduct',
-            name='title',
-            field=models.CharField(default='', max_length=50, verbose_name='заголовок продукта'),
+            model_name="saleproduct",
+            name="title",
+            field=models.CharField(
+                default="", max_length=50, verbose_name="заголовок продукта"
+            ),
         ),
     ]

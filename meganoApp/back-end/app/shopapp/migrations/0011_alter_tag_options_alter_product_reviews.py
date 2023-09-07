@@ -4,19 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shopapp', '0010_saleproduct'),
+        ("shopapp", "0010_saleproduct"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='tag',
-            options={'verbose_name': 'Тэги', 'verbose_name_plural': 'Тэги'},
+            name="tag",
+            options={"verbose_name": "Тэги", "verbose_name_plural": "Тэги"},
         ),
         migrations.AlterField(
-            model_name='product',
-            name='reviews',
-            field=models.ManyToManyField(blank=True, null=True, to='shopapp.productreview'),
+            model_name="product",
+            name="reviews",
+            field=models.ManyToManyField(
+                blank=True, null=True, to="shopapp.productreview"
+            ),
         ),
     ]

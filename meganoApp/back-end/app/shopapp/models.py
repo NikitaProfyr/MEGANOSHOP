@@ -15,6 +15,7 @@ def load_to_image_products(instance: "Product", filename: str) -> str:
 
 # Create your models here.
 
+
 class CategoriesImage(models.Model):
     src = models.ImageField(
         upload_to=load_to_image_categories,
@@ -89,7 +90,9 @@ class ProductReview(models.Model):
     email = models.CharField(max_length=100, null=True, verbose_name="Эл. почта")
     text = models.TextField(max_length=300, verbose_name="текст отзыва")
     rate = models.IntegerField(null=True, verbose_name="оценка")
-    date = models.DateField(null=True, blank=True, auto_now_add=True, verbose_name="дата создания")
+    date = models.DateField(
+        null=True, blank=True, auto_now_add=True, verbose_name="дата создания"
+    )
 
     class Meta:
         verbose_name = "Отзывы о товарах"
